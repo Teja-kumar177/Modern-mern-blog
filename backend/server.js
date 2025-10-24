@@ -11,11 +11,16 @@ const commentRoutes = require('./routes/commentRoutes');
 // Load environment variables
 dotenv.config();
 
+
 // Initialize Express app
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: ['https://modern-mern-blog.vercel.app', 'https://modern-mern-blog-git-master-tejs-projects-7d0f72d9.vercel.app'],
+  credentials: true
+}));
+
 app.use(express.json());
 
 // Routes
